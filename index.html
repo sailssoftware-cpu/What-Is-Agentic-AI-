@@ -209,7 +209,225 @@
   @media (max-width: 600px) {
     .agent-loop-grid { grid-template-columns: 1fr; }
   }
-  /* ── SIX PHASE GRID ──────────────────────────────── */
+  /* ── USE CASE 4-CARD GRID ────────────────────────── */
+  .usecase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+    margin: 1.75rem 0 1.5rem;
+  }
+  .usecase-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.25s, transform 0.2s;
+  }
+  .usecase-card:hover {
+    box-shadow: 0 6px 24px rgba(110,193,228,0.1);
+    transform: translateY(-2px);
+  }
+  .usecase-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--sky);
+    line-height: 1.3;
+  }
+  .usecase-card p {
+    font-size: 0.855rem !important;
+    line-height: 1.75;
+    margin: 0 !important;
+    color: var(--text-muted);
+  }
+
+  /* ── USE CASE STATS ROW ──────────────────────────── */
+  .usecase-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--bg-accent);
+    border: 1px solid rgba(110,193,228,0.2);
+    border-radius: 10px;
+    margin: 0 0 1.5rem;
+    overflow: hidden;
+  }
+  .usecase-stat-item {
+    padding: 1.4rem 1.25rem;
+    border-right: 1px solid rgba(110,193,228,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .usecase-stat-item:last-child { border-right: none; }
+  .usecase-stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--sky);
+    line-height: 1;
+  }
+  .usecase-stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .usecase-stat-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    margin-top: 0.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .usecase-grid { grid-template-columns: 1fr; }
+    .usecase-stats { grid-template-columns: repeat(2, 1fr); }
+    .usecase-stat-item:nth-child(2) { border-right: none; }
+    .usecase-stat-item:nth-child(3) { border-top: 1px solid rgba(110,193,228,0.15); }
+    .usecase-stat-item:nth-child(4) { border-top: 1px solid rgba(110,193,228,0.15); border-right: none; }
+  }
+  @media (max-width: 480px) {
+    .usecase-stats { grid-template-columns: 1fr 1fr; }
+    .usecase-stat-num { font-size: 1.5rem; }
+  }
+
+  /* ── RPA COMPARISON GRID ─────────────────────────── */
+  .rpa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.75rem 0;
+  }
+  .rpa-card {
+    border-radius: 10px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .rpa-left {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid rgba(255,255,255,0.25);
+  }
+  .rpa-right {
+    background: rgba(110,193,228,0.08);
+    border: 1px solid rgba(110,193,228,0.2);
+    border-top: 3px solid var(--sky);
+  }
+  .rpa-card-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--sky);
+  }
+  .rpa-left .rpa-card-label { color: rgba(255,255,255,0.55); }
+  .rpa-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.78;
+    margin: 0 !important;
+  }
+  @media (max-width: 640px) {
+    .rpa-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── CEILING SPLIT CARDS ─────────────────────────── */
+  .ceiling-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  .ceiling-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .ceiling-card.ceiling-card-accent {
+    background: var(--bg-accent);
+    border-color: rgba(110,193,228,0.25);
+    border-top: 3px solid var(--sky);
+  }
+  .ceiling-card-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--sky);
+    margin-bottom: 0.25rem;
+  }
+  .ceiling-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.78;
+    margin: 0 !important;
+  }
+  @media (max-width: 640px) {
+    .ceiling-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── PILLAR GRID ─────────────────────────────────── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .pillar-card {
+    background: rgba(110,193,228,0.08);
+    border: 1px solid rgba(110,193,228,0.2);
+    border-top: 3px solid var(--sky);
+    border-radius: 10px;
+    padding: 1.35rem 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .pillar-card:hover {
+    background: rgba(110,193,228,0.14);
+    transform: translateY(-2px);
+  }
+  .pillar-icon {
+    width: 42px; height: 42px;
+    background: rgba(110,193,228,0.15);
+    border: 1px solid rgba(110,193,228,0.25);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sky);
+  }
+  .pillar-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: -0.01em;
+  }
+  .pillar-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem; line-height: 1.65;
+    color: rgba(255,255,255,0.75);
+    margin: 0 !important;
+  }
+  @media (max-width: 768px) {
+    .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .pillar-grid { grid-template-columns: 1fr; }
+  }
+
   .phase-grid {
     display: flex;
     flex-direction: column;
@@ -275,8 +493,40 @@
       <span class="tag-cluster">Agentic AI</span>
       <span class="tag-brand">Sails Software · Enterprise Blog</span>
     </div>
-    <h1>What Is Agentic AI? A Plain-English Guide for Enterprise Leaders</h1>
-    <p class="hero-intro">Agentic AI is a class of AI system that doesn't wait to be asked. It perceives its environment, sets sub-goals, selects tools, executes actions, and adapts when things don't go as planned — all without a human directing each step. That is the key difference from the generative AI tools your team has been using for the past two years. ChatGPT answers questions. An agentic AI system goes out and does things. For enterprise leaders evaluating where AI investment should go next, that distinction matters enormously — and the decision to deploy agentic systems carries a different risk profile, a different governance requirement, and a fundamentally different ROI model than any AI implementation that came before it.</p>
+    <h1>Agentic AI: A Plain-English Guide for Enterprise Leaders</h1>
+    <p class="hero-intro">Agentic AI is not simply a more capable chatbot. It is a fundamentally different class of AI system — one designed not just to respond, but to act. It perceives its environment, breaks goals into sub-tasks, selects tools, executes actions across workflows and systems, and adapts when conditions change — without requiring a human to orchestrate every individual step. For enterprise leaders evaluating where AI investment should go next, understanding this distinction is no longer optional. It is the foundation of every strategic AI decision worth making in 2025 and beyond.</p>
+
+    <!-- 4-PILLAR GRID -->
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="pillar-label">Perceive</div>
+        <p class="pillar-desc">Monitors environments, ingests data, and detects changes across systems in real time.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="pillar-label">Plan</div>
+        <p class="pillar-desc">Breaks high-level goals into structured sub-tasks with sequenced execution logic.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="pillar-label">Act</div>
+        <p class="pillar-desc">Executes actions across tools, APIs, and enterprise systems autonomously.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>
+        </div>
+        <div class="pillar-label">Adapt</div>
+        <p class="pillar-desc">Adjusts strategy dynamically when conditions, outputs, or inputs change mid-workflow.</p>
+      </div>
+    </div>
     <div class="hero-meta">
       <span class="meta-item"><span class="meta-dot"></span>Sails Software Inc.</span>
       
@@ -290,9 +540,20 @@
 <section class="blog-section" aria-labelledby="s1">
   <div class="container">
     <div class="section-label">Agentic AI</div>
-    <h2 id="s1">The Problem With How Most Enterprise AI Programmes Are Built Right Now</h2>
-    <p>Most enterprise AI adoption in 2024 and 2025 followed a predictable pattern: identify a use case, connect a large language model to internal data through a RAG pipeline, build a chat interface, call it an AI implementation, and present it at the next board review. That approach works — for retrieval. For summarization. For first-draft generation. It produces real value in those contexts. But it hits a hard architectural ceiling the moment you need AI to do more than respond. The moment you need it to act.</p>
-<p>Agentic AI breaks through that ceiling. It is not a better chatbot, a smarter assistant, or a more capable document summarizer. It is a fundamentally different system architecture that enables AI to operate with the kind of structured autonomy that makes genuine workflow automation possible at enterprise scale. That is not a semantic distinction. It changes how you design for AI, how you govern it, how you staff around it, and how you measure whether it is delivering value.</p>
+    <h2 id="s1">Why Most Enterprise AI Programmes Hit a Ceiling — and What Comes Next</h2>
+
+    <div class="ceiling-grid">
+      <div class="ceiling-card">
+        <div class="ceiling-card-label">The 2024–2025 Pattern</div>
+        <p>Most enterprise AI adoption followed a predictable playbook: identify a use case, connect a large language model to enterprise data through a RAG pipeline, build a chat interface, and present it as transformation.</p>
+        <p>That approach delivers real value for retrieval, summarisation, and first-draft generation. But it reaches a hard architectural limit the moment workflows require AI to plan, coordinate systems, execute actions, and adapt dynamically.</p>
+      </div>
+      <div class="ceiling-card ceiling-card-accent">
+        <div class="ceiling-card-label">The Architectural Shift</div>
+        <p>Agentic AI is not a better chatbot or a more capable assistant — it is a different system architecture altogether. It combines reasoning models, orchestration layers, tool execution frameworks, memory systems, and governance controls to enable structured autonomy within enterprise workflows.</p>
+        <p>That distinction changes how organisations design AI systems, govern operational risk, allocate human oversight, and measure business value at scale.</p>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -355,10 +616,20 @@
   <div class="container">
     <div class="section-label">Agentic AI</div>
     <h2 id="s4">Agentic AI vs. RPA: The Comparison That Gets Misunderstood</h2>
-    <p>The comparison that surfaces most frequently in enterprise AI conversations is RPA. Both automate tasks. Both reduce manual processing. The difference is how each handles the unexpected — and in enterprise workflows, the unexpected is not an edge case. It is the daily operational reality.</p>
-<p>RPA follows deterministic, hard-coded rules. When an input format changes, when an API returns an unexpected response, when a document contains a field the bot was not programmed to handle — RPA stops and waits. There is no recovery path that wasn't pre-written by a developer. Every exception requires a code change. The result is a process automation capability that is brittle at exactly the boundaries where real workflows are most variable.</p>
-<p>An agentic AI system reasons about the unexpected. It can identify that an input format changed, determine the likely new format from context, adapt its approach, and continue — without human intervention or a developer code deployment. This capability — autonomous exception handling within defined parameters — is what makes agentic AI viable for the complex, variable, high-variance workflows that RPA has historically been unable to automate reliably.</p>
-<div class="stat-callout"><p><strong>Gartner projects that by 2028, at least 15% of day-to-day work decisions will be made autonomously through agentic AI, compared to 0% in 2024. Adoption is accelerating faster in organizations that already have mature data infrastructure. (Source: Gartner Emerging Technology Analysis, 2024)</strong></p></div>
+    <p>The most frequent comparison in enterprise AI conversations is Robotic Process Automation. Both technologies automate tasks and reduce manual effort — but the core difference lies in how each system handles variability and unexpected conditions. In enterprise operations, those situations are not edge cases. They are part of daily reality.</p>
+
+    <div class="rpa-grid">
+      <div class="rpa-card rpa-left">
+        <div class="rpa-card-label">Traditional RPA</div>
+        <p>Follows deterministic, rule-based workflows. When an input format changes, an API response deviates, or a document contains unexpected fields, automation typically fails or requires additional rule engineering. RPA excels in stable, structured environments — but becomes increasingly brittle as workflow variability increases.</p>
+      </div>
+      <div class="rpa-card rpa-right">
+        <div class="rpa-card-label">Agentic AI</div>
+        <p>Uses reasoning models, contextual understanding, and tool orchestration to adapt dynamically during execution. An agent may detect a changed document structure, infer intent from context, adjust its strategy, and continue the workflow — without a full redevelopment cycle. Governance and validation remain essential because adaptability is probabilistic, not deterministic.</p>
+      </div>
+    </div>
+
+    <div class="stat-callout"><p>In practice, many enterprise architectures combine both approaches: agentic AI for orchestration and decision-making, and RPA for stable execution tasks within legacy systems. These are <strong>complementary — not competing</strong> — technologies.</p></div>
 
   </div>
 </section>
@@ -366,14 +637,51 @@
   <div class="container">
     <div class="section-label">Agentic AI</div>
     <h2 id="s5">Enterprise Use Cases Generating Measurable ROI in 2026</h2>
-    <h3>Contract Review and Risk Extraction</h3>
-<p>A contract review agent ingests executed and pending contracts, extracts key terms and obligation clauses, flags non-standard language against a pre-defined legal playbook, identifies missing required clauses, and produces a structured risk summary for the legal team. The analysis that previously required two hours of a senior associate's attention completes in under four minutes. The associate reviews the exception summary, not the full document. Error detection rates for rule-based compliance checks are equivalent or superior to manual review, because the agent applies the playbook consistently across every contract rather than variably based on reviewer fatigue.</p>
-<h3>Regulatory Submission Support in Life Sciences</h3>
-<p>In pharmaceutical manufacturing, an agentic system monitors regulatory databases for guideline changes across FDA, EMA, and ICH frameworks, cross-references current active submission documents against updated requirements, identifies specific sections requiring revision, and produces a prioritized exception report for the regulatory affairs team. Sails Software has implemented this architecture for life sciences clients operating under simultaneous FDA and EMA oversight requirements. The time to identify and triage the impact of a regulatory guideline change dropped from two to three days of manual cross-referencing to under two hours. The regulatory affairs professionals' time shifts from document hunting to scientific judgment — which is the work that actually requires their expertise.</p>
-<h3>IT Incident Triage and Resolution</h3>
-<p>An incident triage agent monitors the incident queue, classifies each incident by type and severity, checks against a knowledge base of historical resolutions, attempts automated remediation for known issue patterns, and escalates unresolved incidents to on-call engineers — with a structured briefing that includes incident classification, attempted remediation steps, likely root cause hypotheses, and relevant historical context. Mean time to resolution drops measurably. On-call engineers focus their attention on the 15% of incidents that actually require human judgment, not the 85% that are variations of patterns the system already knows how to handle.</p>
-<h3>Customer Onboarding Orchestration</h3>
-<p>An onboarding agent handles the multi-step sequence of activating a new enterprise account: provisioning access across all required systems, triggering communications, scheduling onboarding sessions, completing CRM records, tracking completion of required onboarding steps, and escalating stalled steps to the relevant account team. What typically involves coordination across five departments and takes a working week runs in under two hours. More importantly, it produces a complete audit trail of every action taken, every system touched, and every step completed — which the manual process rarely does.</p>
+    <p>Agentic AI is no longer theoretical. Across legal, life sciences, IT operations, and customer success functions, organisations are deploying agents that complete in minutes what previously required hours of senior specialist attention. The value is not in replacing expertise — it is in redirecting it toward the work that actually requires human judgment.</p>
+
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <div class="usecase-title">Contract Review &amp; Risk Extraction</div>
+        <p>A contract review agent ingests executed and pending contracts, extracts key terms and obligation clauses, flags non-standard language against a legal playbook, identifies missing required clauses, and produces a structured risk summary. Analysis that previously required two hours of a senior associate's attention completes in under four minutes. The associate reviews the exception summary — not the full document. Error detection rates for rule-based compliance checks meet or exceed manual review, because the agent applies the playbook consistently across every contract.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-title">Regulatory Submission Support in Life Sciences</div>
+        <p>In pharmaceutical manufacturing, an agentic system monitors regulatory databases for guideline changes across FDA, EMA, and ICH frameworks, cross-references active submission documents against updated requirements, and produces a prioritised exception report for the regulatory affairs team. The time to identify and triage the impact of a regulatory guideline change dropped from two to three days of manual cross-referencing to under two hours. Regulatory affairs professionals shift from document hunting to scientific judgment — which is the work that actually requires their expertise.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-title">IT Incident Triage &amp; Resolution</div>
+        <p>An incident triage agent monitors the queue, classifies each incident by type and severity, checks against a knowledge base of historical resolutions, attempts automated remediation for known issue patterns, and escalates unresolved incidents to on-call engineers — with a structured briefing that includes classification, remediation steps, and root cause hypotheses. Mean time to resolution drops measurably. On-call engineers focus on the 15% of incidents that require human judgment, not the 85% that are variations of patterns the system already knows how to handle.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-title">Customer Onboarding Orchestration</div>
+        <p>An onboarding agent handles the full multi-step sequence of activating a new enterprise account: provisioning access across all required systems, triggering communications, scheduling onboarding sessions, completing CRM records, tracking required steps, and escalating stalled items to the account team. What typically involves coordination across five departments and takes a working week runs in under two hours. Critically, it produces a complete audit trail of every action taken — which the manual process rarely achieves.</p>
+      </div>
+    </div>
+
+    <div class="usecase-stats">
+      <div class="usecase-stat-item">
+        <div class="usecase-stat-num">4 min</div>
+        <div class="usecase-stat-label">Contract Review</div>
+        <div class="usecase-stat-sub">Down from 2+ hours per document for senior legal associates</div>
+      </div>
+      <div class="usecase-stat-item">
+        <div class="usecase-stat-num">2 hrs</div>
+        <div class="usecase-stat-label">Regulatory Triage</div>
+        <div class="usecase-stat-sub">Down from 2–3 days of manual cross-referencing across frameworks</div>
+      </div>
+      <div class="usecase-stat-item">
+        <div class="usecase-stat-num">85%</div>
+        <div class="usecase-stat-label">Incidents Auto-Handled</div>
+        <div class="usecase-stat-sub">Resolved without escalation to on-call engineering teams</div>
+      </div>
+      <div class="usecase-stat-item">
+        <div class="usecase-stat-num">5×</div>
+        <div class="usecase-stat-label">Faster Onboarding</div>
+        <div class="usecase-stat-sub">Multi-department coordination compressed from one week to two hours</div>
+      </div>
+    </div>
+
+    <div class="stat-callout"><p>The strategic imperative is not <em>whether</em> to deploy agentic AI — it is <strong>which workflows to target first</strong>, and how to govern autonomous action within boundaries that protect operational integrity and enterprise risk thresholds.</p></div>
 
   </div>
 </section>
